@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from 'src/app/company';
+import { ApiService } from 'src/app/services/api.service';
+import { MessageCompanyService } from 'src/app/services/message-company.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+
+  companies !: Company[];
+  
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-  }
+    this.apiService.getCompanies().subscribe((data: Company[]) => {
+      console.log(data.length);
+      this.companies = data;
+    });
+}
+
 
 }

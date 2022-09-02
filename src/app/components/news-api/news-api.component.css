@@ -1,0 +1,5 @@
+.newsContainer{
+    position: fixed;
+    overflow: hidden;
+    margin-top: 200px;
+}

@@ -1,0 +1,7 @@
+.filterContainer{
+    position: fixed;
+    overflow: hidden;
+    border: 0.5px solid grey;
+    height: 910px;
+    width: 440px;
+}

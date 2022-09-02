@@ -1,1 +1,19 @@
-<p>search-result works!</p>
+<div class="searchResultContainer">
+<p *ngIf="!companies.length">No results found</p>
+<mat-card *ngFor="let company of companies">
+    <mat-card-title>
+      <h4 class="companyName">
+        <a href="#">{{ company.name }}</a>
+      </h4>
+    </mat-card-title>
+    <mat-card-content>
+      <h5>
+        <span *ngIf="company.totalMoneyRaised">{{company.totalMoneyRaised}} | </span>
+        <span *ngIf="company.categoryCode">{{company.categoryCode}} | </span>
+        <span *ngIf="company.foundedYear">Since {{company.foundedYear}} | </span>
+        <span *ngIf="company.emailAddress">{{company.emailAddress}} | </span>
+        <span *ngIf="company.phoneNumber">{{company.phoneNumber}} |</span><br><br>
+      </h5>
+    </mat-card-content>
+  </mat-card>
+</div>

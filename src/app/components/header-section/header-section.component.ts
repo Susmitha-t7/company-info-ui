@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderSectionComponent implements OnInit {
 
+  companyInfo = 'CompanyInfo';
+  azDatabase = 'A-Z Database';
   
   constructor() {
     

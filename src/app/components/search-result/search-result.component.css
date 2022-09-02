@@ -1,0 +1,12 @@
+a{
+    color: black;
+}
+
+h5{
+    color: lightslategrey;
+    border-bottom: 0.7px solid gray;
+}
+
+.searchResultContainer{
+    margin-top: 200px;
+}
