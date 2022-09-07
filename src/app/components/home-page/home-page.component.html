@@ -1,7 +1,7 @@
 <div class="homeContainer" style="margin-top: 70px;">
     <div class="row">
         <div class="col-md-3 filterDiv">
-            <app-filter-section></app-filter-section>
+            <app-filter-section (onApplyFilter)="onApplyFilter($event)"></app-filter-section>
         </div>
         <div class="col-md-9">
             <app-search-box></app-search-box>

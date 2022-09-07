@@ -1,7 +1,23 @@
 .filterContainer{
+    padding-top: 50px;
     position: fixed;
     overflow: hidden;
-    border: 0.5px solid grey;
-    height: 910px;
-    width: 440px;
+    border-right: 0.1px solid lightgray;
+    
+}
+
+.nav-link{
+    font-size: 20px;
+}
+
+.btn{
+    font-size: 22px;
+    background-color: gray;
+    color: white;
+    margin-top: 5px;
+    align-content: center;
+}
+
+.filterCont{
+    padding: 2px;
 }

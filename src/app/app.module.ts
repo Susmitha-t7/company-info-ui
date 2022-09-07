@@ -16,6 +16,8 @@ import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MessageCompanyService } from './services/message-company.service';
 import { ApiService } from './services/api.service';
+import { DropdownDirectiveDirective } from './dropdown-directive.directive';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { ApiService } from './services/api.service';
     HomePageComponent,
     NewsApiComponent,
     AzDatabaseComponent,
-    AzSearchComponent
+    AzSearchComponent,
+    DropdownDirectiveDirective
   ],
   imports: [
     BrowserModule,

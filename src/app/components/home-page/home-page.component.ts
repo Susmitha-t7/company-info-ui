@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from 'src/app/company';
+import { FilterArgs } from 'src/app/FilterArgs';
 import { ApiService } from 'src/app/services/api.service';
 import { MessageCompanyService } from 'src/app/services/message-company.service';
 
@@ -20,7 +21,16 @@ export class HomePageComponent implements OnInit {
       console.log(data.length);
       this.companies = data;
     });
+
 }
 
+
+onApplyFilter(args : FilterArgs){
+
+    this.apiService.getCompaniesFromFilter(args)
+                    .subscribe((data: Company[]) => {
+                                    this.companies = data;
+                              });
+}
 
 }

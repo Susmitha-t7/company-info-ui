@@ -1,4 +1,55 @@
 <div class="filterContainer">
-    <p>filter-section works!!!!</p>
+  <div class="m-4">
+    <div class="filterCont">
+      <h5>Category:</h5>
+      <select [(ngModel)]="categorySelected">
+        <option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </option>
+      </select>
+    </div>
+    <hr>
+    
+    <div class="filterCont">
+      <h5>Number Of Employees:</h5>
+      <select [(ngModel)]="noOfEmployeesSelected">
+        <option *ngFor="let item of items" [value]="item">
+          {{item}}
+        </option>
+      </select>
+    </div>
+    <hr>
+    
+    <div class="filterCont">
+      <h5>Founded Year:</h5>
+      <select [(ngModel)]="yearSelected">
+        <option *ngFor="let year of years" [value]="year">
+          {{year}}
+        </option>
+      </select>
+    </div>
+    <hr>
+    
+    <div class="nav-item dropdown ms-auto filterCont">
+      <h5>Tag:</h5><input type="text" [(ngModel)]="tagSelected">
+    </div>
+    <hr>
+    
+    <div class="nav-item dropdown ms-auto filterCont">
+      <h5>Invested On:</h5><input [(ngModel)]="investSelected">
+    </div>
+    <hr>
+    
+    <div class="nav-item dropdown ms-auto filterCont">
+      <h5>Funded By:</h5><input [(ngModel)]="fundSelected">
+    </div>
+    <hr>
+    
+    <div>
+      <button class="btn" (click)="applyFilters()">Apply Filters</button>
+      </div>
+      <div>
+        <button class="btn" (click)="clear()">Clear</button>
+        </div>
+  </div>
 </div>
-
