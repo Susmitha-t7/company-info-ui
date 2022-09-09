@@ -1,13 +1,13 @@
 <div class="homeContainer" style="margin-top: 70px;">
     <div class="row">
         <div class="col-md-3 filterDiv">
-            <app-filter-section></app-filter-section>
+            <app-filter-section (onApplyFilter)="onApplyFilter($event)" (onClear)="onClear($event)"></app-filter-section>
         </div>
         <div class="col-md-9">
-            <app-az-search></app-az-search>
+            <app-az-search (onSearch)="onSearch($event)" (onClearSearch)="onClearSearch($event)" [searchValue]="searchValue"></app-az-search>
             <div class="row">
               <div class="col-md-9">
-                <app-search-result></app-search-result>
+                <app-search-result [companies] = "companies"></app-search-result>
               </div>
               <div class="col-md-3">
                   <app-news-api></app-news-api>

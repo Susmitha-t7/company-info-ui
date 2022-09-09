@@ -1,5 +1,5 @@
 .filterContainer{
-    padding-top: 50px;
+    padding-top: 5px;
     position: fixed;
     overflow: hidden;
     border-right: 0.1px solid lightgray;
@@ -11,13 +11,9 @@
 }
 
 .btn{
-    font-size: 22px;
+    font-size: 18px;
     background-color: gray;
     color: white;
     margin-top: 5px;
     align-content: center;
-}
-
-.filterCont{
-    padding: 2px;
 }

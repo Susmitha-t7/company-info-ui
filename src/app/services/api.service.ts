@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { Company } from '../company';
 import { FilterArgs } from '../FilterArgs';
+import { Company } from '../company';
+import { CompanyDetail } from '../CompanyDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,16 @@ export class ApiService {
 
   private customFilter = "http://localhost:8080/api/company/custom";
 
+  private companyDetailURL = "http://localhost:8080/api/companies/";
+
   constructor(private http: HttpClient) { }
 
   getCompanies(): Observable<Company[]>{
     return this.http.get<Company[]>(`${this.baseUrl}`);
+  }
+
+  getCompanyDetails(name : string | null): Observable<CompanyDetail>{
+    return this.http.get<CompanyDetail>(`${this.companyDetailURL}`+name);
   }
 
   getCategoryCodes(): Observable<String[]>{
@@ -34,13 +41,15 @@ export class ApiService {
   getCompaniesFromFilter(args : FilterArgs): Observable<Company[]>{
     console.log(args);
     let queryParams = new HttpParams();
+    queryParams = queryParams.append("search",String(args.search));
+    queryParams = queryParams.append("searchStart",String(args.searchStart));
     queryParams = queryParams.append("categoryCode",String(args.category));
     queryParams = queryParams.append("investedOn",String(args.invest));
     queryParams = queryParams.append("tag",String(args.tag));
     queryParams = queryParams.append("fundedBy",String(args.fund));
     queryParams = queryParams.append("numberOfEmployees",String(args.noOfEmployees));
     queryParams = queryParams.append("foundedYear",args.year);
-    
+    console.log(queryParams);
     return this.http.get<Company[]>(`${this.customFilter}`,{params:queryParams});
   }
 

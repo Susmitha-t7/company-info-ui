@@ -14,6 +14,8 @@ export class FilterSectionComponent implements OnInit {
 
   @Output() onApplyFilter = new EventEmitter<FilterArgs>();
 
+  @Output() onClear = new EventEmitter<String>();
+
   peepsSelect:any;
 
   categories !: String[];
@@ -78,5 +80,6 @@ export class FilterSectionComponent implements OnInit {
     this.tagSelected = '';
     this.investSelected = '';
     this.fundSelected = '';
+    this.onClear.emit("clear");
   }
 }

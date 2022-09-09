@@ -1,3 +1,6 @@
 <div class="searchContainer">
-    
+        <input 
+          [(ngModel)]="searchValue" (keyup)="search()" type="text" 
+          id="searchKey" class="form-control"
+          placeholder="Search Companies..." />
 </div>

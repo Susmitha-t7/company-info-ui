@@ -2,9 +2,9 @@
 
 <mat-card *ngFor="let company of companies">
     <mat-card-title>
-      <h4 class="companyName">
-        <a href="#">{{ company.name }}</a>
-      </h4>
+      <h3 class="companyName">
+        <a href="#" [routerLink]="['/companyDetails', company.permalink]">{{ company.name }}</a>
+      </h3>
     </mat-card-title>
     <mat-card-content>
       <h5>
@@ -12,7 +12,9 @@
         <span *ngIf="company.categoryCode">{{company.categoryCode}} | </span>
         <span *ngIf="company.foundedYear">Since {{company.foundedYear}} | </span>
         <span *ngIf="company.emailAddress">{{company.emailAddress}} | </span>
+        <span>{{company.permalink}}</span>
         <span *ngIf="company.phoneNumber">{{company.phoneNumber}} |</span><br><br>
+        
       </h5>
     </mat-card-content>
   </mat-card>

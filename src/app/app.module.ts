@@ -17,6 +17,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MessageCompanyService } from './services/message-company.service';
 import { ApiService } from './services/api.service';
 import { DropdownDirectiveDirective } from './dropdown-directive.directive';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { DropdownDirectiveDirective } from './dropdown-directive.directive';
     NewsApiComponent,
     AzDatabaseComponent,
     AzSearchComponent,
-    DropdownDirectiveDirective
+    DropdownDirectiveDirective,
+    CompanyDetailsComponent
   ],
   imports: [
     BrowserModule,

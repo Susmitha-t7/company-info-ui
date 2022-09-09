@@ -1,4 +1,5 @@
-export class Company{
+export class CompanyDetail{
+    
     id !: String;
     permalink !: String;
     name !: String;

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from 'src/app/company';
 
 @Component({
@@ -16,5 +17,6 @@ export class SearchResultComponent implements OnInit {
   ngOnInit(): void {
       
   }
+
 }
 

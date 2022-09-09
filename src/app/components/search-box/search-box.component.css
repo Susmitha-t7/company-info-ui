@@ -1,2 +1,8 @@
+.searchContainer{
+    padding-top: 50px;
+}
 
-
+input{
+    height: 50px;
+    font-size: large;
+}

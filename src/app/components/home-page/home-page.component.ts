@@ -12,11 +12,14 @@ import { MessageCompanyService } from 'src/app/services/message-company.service'
 export class HomePageComponent implements OnInit {
 
 
+  args!: FilterArgs;
   companies !: Company[];
+  searchValue !: String;
   
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.args = new FilterArgs;
     this.apiService.getCompanies().subscribe((data: Company[]) => {
       console.log(data.length);
       this.companies = data;
@@ -27,10 +30,44 @@ export class HomePageComponent implements OnInit {
 
 onApplyFilter(args : FilterArgs){
 
-    this.apiService.getCompaniesFromFilter(args)
+    this.args.category = args.category;
+    this.args.noOfEmployees = args.noOfEmployees;
+    this.args.year = args.year; 
+    this.args.tag = args.tag;
+    this.args.invest = args.invest;
+    this.args.fund = args.fund;
+
+    this.apiService.getCompaniesFromFilter(this.args)
                     .subscribe((data: Company[]) => {
                                     this.companies = data;
                               });
+}
+
+onSearch(args : FilterArgs){
+  this.args.search = args.search;
+  this.apiService.getCompaniesFromFilter(this.args)
+                  .subscribe((data: Company[]) => {
+                                  this.companies = data;
+                            });
+}
+
+onClear(args : String){
+  this.searchValue = '';
+  
+  this.args = new FilterArgs;
+  this.apiService.getCompanies()
+                  .subscribe((data: Company[]) => {
+                                  this.companies = data;
+                            });
+}
+
+onClearSearch(args : String){
+  this.searchValue = "";
+  this.args.search = new String;
+  this.apiService.getCompaniesFromFilter(this.args)
+                  .subscribe((data: Company[]) => {
+                                  this.companies = data;
+                            });
 }
 
 }
