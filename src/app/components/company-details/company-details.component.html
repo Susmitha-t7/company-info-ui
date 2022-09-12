@@ -1,0 +1,57 @@
+<div class="companyContainer">
+    <div class="companyName" *ngIf="companyDetail">
+        <h2>{{companyDetail.name}}</h2>
+    </div>
+    <div class="sectionContainer">
+            <table>
+                <tr class="firstSection">
+                    <td [ngClass]="summarySec" (click)="onSummaryClick()">Summary</td>
+                    <td [ngClass]="competitorSec" (click)="onCompetitorClick()">Competitors</td>
+                    <td [ngClass]="investedOnSec" (click)="onInvestedClick()">Invested On</td>
+                    <td [ngClass]="acquisitionSec" (click)="onAcquisitionClick()">Acquisitions</td>
+                    <td></td>
+                </tr>
+                <tr class="secondSection">
+                    <td></td>
+                    <td [ngClass]="fundingSec" (click)="onFundingClick()" ng-click="show = 5">Fundings</td>
+                    <td [ngClass]="relationshipSec" (click)="onRelationshipClick()" ng-click="show = 6">Relationships</td>
+                    <td [ngClass]="productSec" (click)="onProductClick()" ng-click="show = 7">Products</td>
+                    <td [ngClass]="newsSec" (click)="onNewsClick()" ng-click="show = 8">News</td>
+                </tr>
+            </table>
+    </div>
+    <div class="secContainer">
+        <div id="summaryId" *ngIf="show==1">
+            <app-summary-section [companyDetail]="companyDetail"></app-summary-section>
+        </div>
+
+        <div id="competitorId" *ngIf="show==2">
+            <app-competitor-section [competitors]="competitors"></app-competitor-section>
+        </div>
+
+        <div id="investedId" *ngIf="show==3">
+            <app-investedon-section></app-investedon-section>
+        </div>
+
+        <div id="acquisitionId" *ngIf="show==4">
+            <app-acquisitions-section></app-acquisitions-section>
+        </div>
+
+        <div id="fundingId" *ngIf="show==5">
+            <app-funding-section></app-funding-section>
+        </div>
+
+        <div id="relationshipId" *ngIf="show==6">
+            <app-relationships-section></app-relationships-section>
+        </div>
+
+        <div id="productsId" *ngIf="show==7">
+            <app-products-section [products]="products"></app-products-section>
+        </div>
+
+        <div id="newsId" *ngIf="show==8">
+            <app-news-section></app-news-section>
+        </div>
+        
+    </div>
+</div>

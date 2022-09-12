@@ -20,14 +20,16 @@ export class ApiService {
 
   private companyDetailURL = "http://localhost:8080/api/companies/";
 
+  private competitorURL = "http://localhost:8080/api/competitors/";
+
   constructor(private http: HttpClient) { }
 
   getCompanies(): Observable<Company[]>{
     return this.http.get<Company[]>(`${this.baseUrl}`);
   }
 
-  getCompanyDetails(name : string | null): Observable<CompanyDetail>{
-    return this.http.get<CompanyDetail>(`${this.companyDetailURL}`+name);
+  getCompanyDetails(name : string | null): Observable<any>{
+    return this.http.get<any>(`${this.companyDetailURL}`+name);
   }
 
   getCategoryCodes(): Observable<String[]>{
@@ -37,6 +39,13 @@ export class ApiService {
   getTags(): Observable<String[]>{
     return this.http.get<String[]>(`${this.tagURL}`);
   }
+
+  getCompetitors(names: any): Observable<Company[]>{
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append("names",names);
+    return this.http.get<Company[]>(`${this.competitorURL}`, {params:queryParams});
+  }
+
 
   getCompaniesFromFilter(args : FilterArgs): Observable<Company[]>{
     console.log(args);

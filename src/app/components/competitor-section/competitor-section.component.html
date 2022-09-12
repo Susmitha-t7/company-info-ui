@@ -1,0 +1,31 @@
+<div class="summarySectionContainer" *ngIf="competitors">
+    <div class="headingSec">
+        <div class="summaryCont">Competitors:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="competitorDetail">
+        <mat-card *ngFor="let company of competitorDetail">
+            <mat-card-title>
+              <h3 class="companyName">
+                <a href="#" [routerLink]="['/companyDetails', company.permalink]" target="_blank">{{ company.name }}</a>
+              </h3>
+            </mat-card-title>
+            <mat-card-content>
+              <h5>
+                <span *ngIf="company.totalMoneyRaised">{{company.totalMoneyRaised}} | </span>
+                <span *ngIf="company.categoryCode">{{company.categoryCode}} | </span>
+                <span *ngIf="company.foundedYear">Since {{company.foundedYear}} | </span>
+                <span *ngIf="company.emailAddress">{{company.emailAddress}} | </span>
+                <span>{{company.permalink}}</span>
+                <span *ngIf="company.phoneNumber">{{company.phoneNumber}} |</span><br><br>
+                
+              </h5>
+            </mat-card-content>
+          </mat-card>
+    </div>
+    <div class="competitorNotFound" *ngIf="!competitorDetail">
+      <h3>No Competitors Found!!</h3>
+    </div>
+</div>
+
+

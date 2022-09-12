@@ -1,0 +1,57 @@
+.summarySectionContainer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid gray;
+}
+
+.headingSec div{
+    display: flex;
+}
+
+.headingSec{
+    padding: 30px;
+}
+
+.summaryContent{
+    padding: 50px;
+}
+
+.urls{
+    float: right;
+}
+
+.urls div{
+padding-left: 1px;
+}
+
+img{
+    object-fit: cover;
+}
+
+.summaryCont{
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    
+}
+
+.summaryContent li{
+    list-style: none;
+}
+
+h4{
+    font-weight:lighter;
+    font-style: oblique;
+    margin: 0 0 1px;
+}
+
+.summaryContent td{
+    padding-bottom: 5px;
+    width: 50%;
+}
+
+table{
+    table-layout: fixed;
+}

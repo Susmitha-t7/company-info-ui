@@ -17,7 +17,15 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MessageCompanyService } from './services/message-company.service';
 import { ApiService } from './services/api.service';
 import { DropdownDirectiveDirective } from './dropdown-directive.directive';
-import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { CompanyDetailsComponent } from './components/company-details/company-details.component';
+import { SummarySectionComponent } from './components/summary-section/summary-section.component';
+import { CompetitorSectionComponent } from './components/competitor-section/competitor-section.component';
+import { InvestedonSectionComponent } from './components/investedon-section/investedon-section.component';
+import { AcquisitionsSectionComponent } from './components/acquisitions-section/acquisitions-section.component';
+import { FundingSectionComponent } from './components/funding-section/funding-section.component';
+import { RelationshipsSectionComponent } from './components/relationships-section/relationships-section.component';
+import { ProductsSectionComponent } from './components/products-section/products-section.component';
+import { NewsSectionComponent } from './components/news-section/news-section.component';
 
 
 
@@ -33,7 +41,15 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
     AzDatabaseComponent,
     AzSearchComponent,
     DropdownDirectiveDirective,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    SummarySectionComponent,
+    CompetitorSectionComponent,
+    InvestedonSectionComponent,
+    AcquisitionsSectionComponent,
+    FundingSectionComponent,
+    RelationshipsSectionComponent,
+    ProductsSectionComponent,
+    NewsSectionComponent
   ],
   imports: [
     BrowserModule,

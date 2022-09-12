@@ -1,0 +1,141 @@
+<div class="summarySectionContainer" *ngIf="companyDetail">
+        <div class="headingSec">
+            <div class="summaryCont">Summary:</div>
+            
+                <div class="urls">
+                    <div *ngIf="companyDetail.crunchbaseUrl">
+                        <a href="{{companyDetail.crunchbaseUrl}}" target="_blank">
+                            <img alt="Crunch" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Crunchbase_favicon.svg"
+                            width="25" height="25"/>
+                        </a>
+                    </div> 
+                    <div *ngIf="companyDetail.homepageUrl">
+                        <a href="{{companyDetail.homepageUrl}}" target="_blank">
+                            <img alt="Home" src="https://purepng.com/public/uploads/large/purepng.com-home-iconsymbolsiconsapple-iosiosios-8-iconsios-8-721522596056wkxtr.png"
+                            width="25" height="25"/>
+                        </a>
+                    </div> 
+                    <div *ngIf="companyDetail.blogUrl">
+                        <a href="{{companyDetail.blogUrl}}" target="_blank">
+                            <img alt="Blog" src="https://www.accfb.org/wp-content/uploads/2018/06/Blog-icon.png"
+                            width="25" height="25"/>
+                        </a>
+                    </div> 
+                    <div *ngIf="companyDetail.blogFeedUrl">
+                        <a href="{{companyDetail.blogFeedUrl}}" target="_blank">
+                            <img alt="BlogFeed" src="https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Feed-icon.svg/1200px-Feed-icon.svg.png"
+                            width="25" height="25"/>
+                        </a>
+                    </div> 
+                    <div *ngIf="companyDetail.twitterUsername">
+                        <a href="https://twitter.com/{{companyDetail.twitterUsername}}" target="_blank">
+                            <img alt="Twitter" src="https://cdn-icons-png.flaticon.com/512/124/124021.png"
+                            width="25" height="25"/>
+                        </a>
+                    </div> 
+                </div>
+        </div>
+        
+        <div class="summaryContent">
+            <table>
+                <tr>
+                    <td>
+                        <h4>Description:</h4>
+                        <div *ngIf="companyDetail.description; else nullTemplate">
+                            <p>{{companyDetail.description}}</p>
+                        </div>                       
+                    </td>
+                    <td>
+                        <h4>Email Address:</h4>
+                        <div *ngIf="companyDetail.emailAddress; else nullTemplate">
+                            <p>{{companyDetail.emailAddress}}</p>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Category:</h4>
+                        <div *ngIf="companyDetail.categoryCode; else nullTemplate">
+                            <p>{{companyDetail.categoryCode}}</p>
+                        </div>                       
+                    </td>
+                    <td>
+                        <h4>Phone Number:</h4>
+                        <div *ngIf="companyDetail.phoneNumber; else nullTemplate">
+                            <p>{{companyDetail.phoneNumber}}</p>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <h4>Number Of Employees:</h4>
+                        <div *ngIf="companyDetail.numberOfEmployees; else nullTemplate">
+                            <p>{{companyDetail.numberOfEmployees}}</p>
+                        </div>                       
+                    </td>
+                    <td rowspan="4">
+                        <h4>Address:</h4>
+                        <div *ngIf="companyDetail.offices; else nullTemplate">
+                            <ul *ngFor="let office of companyDetail.offices">
+                                <li>
+                                    <a href="https://www.google.com/maps/search/?api=1&query={{office.latitude}},{{office.longitude}}" target="_blank">
+                                        <img alt="Map" src="https://cdn-icons-png.flaticon.com/512/3253/3253129.png"
+                            width="20" height="20"/>
+                                        <span *ngIf="office.description">{{office.description}}: </span>
+                                        <span *ngIf="office.address1">{{office.address1}}, </span>
+                                        <span *ngIf="office.address2">{{office.address2}}, </span>
+                                        <span *ngIf="office.city">{{office.city}}, </span>
+                                        <span *ngIf="office.stateCode">{{office.stateCode}}, </span>
+                                        <span *ngIf="office.countryCode">{{office.countryCode}}, </span>
+                                        <span *ngIf="office.zipCode">{{office.zipCode}}</span>
+                                    </a>
+                                  
+                                </li>
+                              </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <h4>Total Money Raised:</h4>
+                        <div *ngIf="companyDetail.totalMoneyRaised; else nullTemplate">
+                            <p>{{companyDetail.totalMoneyRaised}}</p>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <h4>Founded Year:</h4>
+                        <div *ngIf="companyDetail.foundedYear; else nullTemplate">
+                            <p>{{companyDetail.foundedYear}}</p>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <h4>HomePage URL:</h4>
+                        <div *ngIf="companyDetail.homepageUrl; else nullTemplate">
+                            <p>{{companyDetail.homepageUrl}}</p>
+                        </div>                       
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <td colspan="2" class="overViewSec">
+                        <h4>Overview:</h4>
+                        <div *ngIf="companyDetail.overview; else nullTemplate" >
+                            <p [innerHTML]="companyDetail.overview"></p>
+                        </div>                       
+                    </td>
+                </tr>
+            </table>
+            <ng-template #nullTemplate>
+                -
+            </ng-template>
+        </div>
+</div>
+
