@@ -62,8 +62,9 @@ onClear(args : String){
 }
 
 onClearSearch(args : String){
-  this.searchValue = "";
+  this.searchValue = '';
   this.args.search = new String;
+  console.log("INNN"+this.args.search);
   this.apiService.getCompaniesFromFilter(this.args)
                   .subscribe((data: Company[]) => {
                                   this.companies = data;
