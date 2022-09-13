@@ -1,1 +1,12 @@
-<p>news-section works!</p>
+<div class="summarySectionContainer">
+    <div class="headingSec">
+        <div class="summaryCont">Products:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="companyName">
+        
+    </div>
+    <div class="productsNotFound" *ngIf="!companyName">
+      <h3>No Products Found!!</h3>
+    </div>
+</div>

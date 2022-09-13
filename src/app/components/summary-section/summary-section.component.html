@@ -132,6 +132,14 @@
                         </div>                       
                     </td>
                 </tr>
+                <tr>                    
+                    <td colspan="2" class="tagSec">
+                        <h4>Tags:</h4>
+                        <div *ngIf="companyDetail.tagList; else nullTemplate" >
+                            <p [innerHTML]="companyDetail.tagList"></p>
+                        </div>                       
+                    </td>
+                </tr>
             </table>
             <ng-template #nullTemplate>
                 -

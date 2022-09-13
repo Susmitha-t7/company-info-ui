@@ -1,1 +1,24 @@
-<p>relationships-section works!</p>
+<div class="summarySectionContainer">
+    <div class="headingSec">
+        <div class="summaryCont">Contacts:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="relationships.length">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Current/Former</th>
+            </tr>
+            <tr *ngFor= "let rel of relationships">
+                <td>{{ rel.title}}</td>
+                <td>{{ rel.person.firstName }} {{ rel.person.lastName }}</td>
+                <td *ngIf = "rel.past == false">Current</td>       
+                <td *ngIf = "!(rel.past == false)">Former</td>         
+             </tr>
+        </table>  
+    </div>
+    <div class="productsNotFound" *ngIf="!relationships.length">
+      <h3>No Contacts Found!!</h3>
+    </div>
+</div>

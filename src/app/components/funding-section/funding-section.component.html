@@ -1,1 +1,25 @@
-<p>funding-section works!</p>
+<div class="summarySectionContainer">
+    <div class="headingSec">
+        <div class="summaryCont">Funding Rounds:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="fundingRounds.length">
+        <table>
+            <tr>
+                <th>Founding Round</th>
+                <th>Raised Amount</th>
+                <th>Currency</th>
+                <th>Funded Year</th>
+            </tr>
+            <tr *ngFor= "let fund of fundingRounds">
+                <td>{{ fund.roundCode}} (id : {{fund.id}})</td>
+                <td>{{ fund.raisedAmount }}</td>
+                <td>{{ fund.raisedCurrencyCode }}</td>
+                <td>{{ fund.fundedYear }}</td>
+             </tr>
+        </table>   
+    </div>
+    <div class="productsNotFound" *ngIf="!fundingRounds.length">
+      <h3>No Data Found!!</h3>
+    </div>
+</div>

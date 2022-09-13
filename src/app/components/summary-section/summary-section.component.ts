@@ -9,6 +9,8 @@ export class SummarySectionComponent implements OnInit {
 
   @Input()
   companyDetail !: any;
+
+  tag !: String[];
   constructor() { }
 
   ngOnInit(): void {

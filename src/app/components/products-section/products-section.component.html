@@ -1,1 +1,14 @@
-<p>products-section works!</p>
+<div class="summarySectionContainer">
+    <div class="headingSec">
+        <div class="summaryCont">Products:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="products.length">
+        <ul class="columnList">
+            <li *ngFor="let p of products">{{p.name}}</li>
+          </ul>
+    </div>
+    <div class="productsNotFound" *ngIf="!products.length">
+      <h3>No Products Found!!</h3>
+    </div>
+</div>

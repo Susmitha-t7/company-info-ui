@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-acquisitions-section',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcquisitionsSectionComponent implements OnInit {
 
+  @Input()
+  acquisitions !: any;
+
+  @Input()
+  acquiredBy !: any;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.acquiredBy);
+    console.log(this.acquisitions);
   }
 
 }

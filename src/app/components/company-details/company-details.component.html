@@ -30,19 +30,19 @@
         </div>
 
         <div id="investedId" *ngIf="show==3">
-            <app-investedon-section></app-investedon-section>
+            <app-investedon-section [investments]="investments"></app-investedon-section>
         </div>
 
         <div id="acquisitionId" *ngIf="show==4">
-            <app-acquisitions-section></app-acquisitions-section>
+            <app-acquisitions-section [acquisitions]="acquisitions" [acquiredBy]="acquiredBy"></app-acquisitions-section>
         </div>
 
         <div id="fundingId" *ngIf="show==5">
-            <app-funding-section></app-funding-section>
+            <app-funding-section [fundingRounds] = "fundingRounds"></app-funding-section>
         </div>
 
         <div id="relationshipId" *ngIf="show==6">
-            <app-relationships-section></app-relationships-section>
+            <app-relationships-section [relationships]="relationships"></app-relationships-section>
         </div>
 
         <div id="productsId" *ngIf="show==7">
@@ -50,7 +50,7 @@
         </div>
 
         <div id="newsId" *ngIf="show==8">
-            <app-news-section></app-news-section>
+            <app-news-section [companyName]="companyDetail.name"></app-news-section>
         </div>
         
     </div>

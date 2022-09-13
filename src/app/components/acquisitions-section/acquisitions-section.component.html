@@ -1,1 +1,40 @@
-<p>acquisitions-section works!</p>
+<div class="summarySectionContainer">
+    
+    <div class="summaryContent" *ngIf="acquisitions.length">
+            <div class="summaryCont">Acquisitions:</div>
+            <table>
+                <tr>
+                    <th>Acquiree Name</th>
+                    <th>Acquired Year</th>
+                    <th>Price</th>
+                    <th>Currency</th>
+                    <th>Term Code</th>
+                </tr>
+                <tr *ngFor= "let acqui of acquisitions">
+                    <td>{{ acqui.company.name}}</td>
+                    <td>{{ acqui.acquiredYear }}</td>
+                    <td>{{ acqui.priceAmount }}</td>
+                    <td>{{ acqui.priceCurrencyCode }}</td>
+                    <td>{{ acqui.termCode }}</td>
+                 </tr>
+            </table>       
+    </div>
+
+    <div class="summaryContent" *ngIf="acquiredBy">
+        <div class="summaryCont">
+            Acquired By:
+            <p class="acqValues">{{acquiredBy.acquiringCompany.name}}</p><br>
+            <h4></h4>Acquired Year:
+            <p class="acqValues">{{acquiredBy.acquiredYear}}</p><br>
+            <h4></h4>Amount:
+            <p class="acqValues">{{acquiredBy.priceAmount}}</p><br>
+            <h4></h4>Currency Code:
+            <p class="acqValues">{{acquiredBy.priceCurrencyCode}}</p><br>
+        </div>
+        
+    </div>
+
+    <div class="productsNotFound" *ngIf="!acquisitions.length && !acquiredBy">
+      <h3>No data Found!!</h3>
+    </div>
+</div>

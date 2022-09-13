@@ -1,1 +1,29 @@
-<p>investedon-section works!</p>
+<div class="summarySectionContainer">
+    <div class="headingSec">
+        <div class="summaryCont">Investments:</div>
+    </div>
+    
+    <div class="summaryContent" *ngIf="investments.length">
+
+        <table>
+            <tr>
+                <th>Company</th>
+                <th>Funded Year</th>
+                <th>Money Raised</th>
+                <th>Currency</th>
+                <th>Round Code</th>
+            </tr>
+            <tr *ngFor= "let invest of investments">
+                <td>{{ invest.fundingRound.company.name}}</td>
+                <td>{{ invest.fundingRound.fundedYear }}</td>
+                <td>{{ invest.fundingRound.raisedAmount }}</td>
+                <td>{{ invest.fundingRound.raisedCurrencyCode }}</td>
+                <td>{{ invest.fundingRound.roundCode }}</td>
+             </tr>
+        </table>
+        
+    </div>
+    <div class="productsNotFound" *ngIf="!investments.length">
+      <h3>No Investments Found!!</h3>
+    </div>
+</div>

@@ -21,6 +21,16 @@ export class CompanyDetailsComponent implements OnInit {
 
     competitors !: String[];
 
+    investments !: any;
+
+    acquiredBy !: any;
+
+    acquisitions !:any;
+
+    fundingRounds !: any;
+
+    relationships !: any;
+
     show !: any
     summarySec = 'notActive';
     competitorSec = 'notActive';
@@ -39,6 +49,11 @@ export class CompanyDetailsComponent implements OnInit {
     this.apiService.getCompanyDetails(this.companyName).subscribe((data: any) => {
       this.companyDetail = data;
       this.products = data.products;
+      this.investments = data.investments;
+      this.acquiredBy = data.acquiredBy;
+      this.acquisitions = data.acquisitions;
+      this.fundingRounds = data.fundingRounds;
+      this.relationships = data.relationships;
     });
   }
 
@@ -95,7 +110,7 @@ export class CompanyDetailsComponent implements OnInit {
     this.show = 7;
     this.reset();
     this.productSec = 'active';
-    console.log('product'+this.show);
+    console.log(this.products);
   }
 
   onNewsClick(){

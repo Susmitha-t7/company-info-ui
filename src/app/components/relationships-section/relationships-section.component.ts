@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-relationships-section',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelationshipsSectionComponent implements OnInit {
 
+  @Input()
+  relationships !: any;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.relationships);
   }
 
 }

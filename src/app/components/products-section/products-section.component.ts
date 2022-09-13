@@ -12,6 +12,7 @@ export class ProductsSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("products::::"+this.products);
   }
 
 }
