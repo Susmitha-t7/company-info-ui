@@ -1,16 +1,22 @@
 <div class="summarySectionContainer">
     <div class="headingSec">
-        <div class="summaryCont">Contacts:</div>
+        <div class="summaryCont">Contacts: &nbsp; &nbsp;
+            <input 
+            [(ngModel)]="searchValue" (keyup)="search()" type="text" 
+            id="searchKey" class="form-control"
+            placeholder="Search Name..." />
+        </div>
     </div>
+
     
-    <div class="summaryContent" *ngIf="relationships.length">
+    <div class="summaryContent" *ngIf="filteredItems.length">
         <table>
-            <tr>
+            <tr class="headingCSS">
                 <th>Title</th>
                 <th>Name</th>
                 <th>Current/Former</th>
             </tr>
-            <tr *ngFor= "let rel of relationships">
+            <tr *ngFor= "let rel of filteredItems">
                 <td>{{ rel.title}}</td>
                 <td>{{ rel.person.firstName }} {{ rel.person.lastName }}</td>
                 <td *ngIf = "rel.past == false">Current</td>       
@@ -18,6 +24,7 @@
              </tr>
         </table>  
     </div>
+    
     <div class="productsNotFound" *ngIf="!relationships.length">
       <h3>No Contacts Found!!</h3>
     </div>

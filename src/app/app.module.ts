@@ -26,7 +26,8 @@ import { FundingSectionComponent } from './components/funding-section/funding-se
 import { RelationshipsSectionComponent } from './components/relationships-section/relationships-section.component';
 import { ProductsSectionComponent } from './components/products-section/products-section.component';
 import { NewsSectionComponent } from './components/news-section/news-section.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -58,7 +59,9 @@ import { NewsSectionComponent } from './components/news-section/news-section.com
     FormsModule,
     MatCardModule, 
     InfiniteScrollModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [MessageCompanyService, ApiService],
   bootstrap: [AppComponent]

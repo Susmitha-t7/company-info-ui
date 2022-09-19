@@ -6,7 +6,7 @@
     <div class="summaryContent" *ngIf="investments.length">
 
         <table>
-            <tr>
+            <tr class="headingCSS">
                 <th>Company</th>
                 <th>Funded Year</th>
                 <th>Money Raised</th>
@@ -14,7 +14,10 @@
                 <th>Round Code</th>
             </tr>
             <tr *ngFor= "let invest of investments">
-                <td>{{ invest.fundingRound.company.name}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/companyDetails', invest.fundingRound.company.permalink]" target="_blank">{{ invest.fundingRound.company.name}}</a>
+                </td>
+                
                 <td>{{ invest.fundingRound.fundedYear }}</td>
                 <td>{{ invest.fundingRound.raisedAmount }}</td>
                 <td>{{ invest.fundingRound.raisedCurrencyCode }}</td>

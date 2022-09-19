@@ -33,15 +33,16 @@
     font-weight: bolder;
 }
 
-table, tr , td, th {
-
-    border: 0.3px solid lightgray;
-    
-    border-collapse: collapse;
-    
-    
-    
+table {
+    border: 0.3px solid lightgray;   
+    border-collapse: collapse;  
     }
+
+.headingCSS{
+    border: 0.3px solid lightgray; 
+    border-bottom: 6px lightgray solid;  
+    border-collapse: collapse; 
+}
 
 table{
     table-layout: fixed;
@@ -49,10 +50,17 @@ table{
     
 }
 
-th, td{
+th,td{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
+td a{
+    color: black;
+}
+
+.mat-dialog-container{
+    width: 20%;
+}
 

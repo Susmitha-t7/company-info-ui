@@ -33,17 +33,35 @@
     font-weight: bolder;
 }
 
-table{
+table {
+    border: 0.3px solid lightgray;   
+    border-collapse: collapse;  
     table-layout: fixed;
     width: 100%;
-    
+    }
+
+.headingCSS{
+    border: 0.3px solid lightgray; 
+    border-bottom: 6px lightgray solid;  
+    border-collapse: collapse; 
 }
 
-th, td{
+th,td{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+td a{
+    color: black;
+}
+
+#searchKey{
+    height: 75%;
+    width: 50%;
+}
+
+
 
 
 

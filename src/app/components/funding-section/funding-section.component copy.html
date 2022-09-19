@@ -12,7 +12,7 @@
             </tr>
             <tr *ngFor= "let fund of fundingRounds">
                 <td>
-                    <button mat-button (click)="openFundingDetails(fund.investments)">{{ fund.roundCode}} (id : {{fund.id}})</button>
+                    <button (click)="openFundingDetails(fund.investments)">{{ fund.roundCode}} (id : {{fund.id}})</button>
                 </td>
                 <td>{{ fund.raisedAmount }}</td>
                 <td>{{ fund.raisedCurrencyCode }}</td>
@@ -34,15 +34,15 @@
                 <td>
                     <div *ngIf="inv.financialOrg">
                         Financial Org: &nbsp;
-                        <span class="dataCSS">{{inv.financialOrg.name}}</span>
+                        {{inv.financialOrg.name}}
                     </div>
                     <div *ngIf="inv.person">
                         Person: &nbsp;
-                        <span class="dataCSS">{{inv.person.firstName}} {{inv.person.lastName}}</span>
+                        {{inv.person.firstName}} {{inv.person.lastName}}
                     </div>
                     <div *ngIf="inv.company">
-                        Company: &nbsp;
-                        <span class="dataCSS">{{inv.company.name}}</span>
+                        Person: &nbsp;
+                        {{inv.company.name}}
                     </div>
                 </td>
               </tr>

@@ -1,9 +1,10 @@
-<div class="summarySectionContainer">
+<!--<div class="summarySectionContainer">
+   
     
     <div class="summaryContent" *ngIf="acquisitions.length">
             <div class="summaryCont">Acquisitions:</div>
             <table>
-                <tr>
+                <tr class="headingCSS">
                     <th>Acquiree Name</th>
                     <th>Acquired Year</th>
                     <th>Price</th>
@@ -37,4 +38,55 @@
     <div class="productsNotFound" *ngIf="!acquisitions.length && !acquiredBy">
       <h3>No data Found!!</h3>
     </div>
+    
 </div>
+-->
+
+
+<div class="summarySectionContainer" *ngIf="acquisitions.length">
+    <div class="headingSec">
+        <div class="summaryCont">Acquisitions:</div>
+    </div>   
+    <div class="summaryContent">
+        <table>
+            <tr class="headingCSS">
+                <th>Acquiree Name</th>
+                <th>Acquired Year</th>
+                <th>Price</th>
+                <th>Currency</th>
+                <th>Term Code</th>
+            </tr>
+            <tr *ngFor= "let acqui of acquisitions">
+                <td>
+                    <a href="#" [routerLink]="['/companyDetails', acqui.company.permalink]" target="_blank">{{ acqui.company.name}}</a>
+                </td>
+                <td>{{ acqui.acquiredYear }}</td>
+                <td>{{ acqui.priceAmount }}</td>
+                <td>{{ acqui.priceCurrencyCode }}</td>
+                <td>{{ acqui.termCode }}</td>
+             </tr>
+        </table>   
+    </div>
+</div>
+
+<div class="summarySectionContainer" *ngIf="acquiredBy">
+    <div class="headingSec">
+        <div class="summaryCont">Acquired By :&nbsp;&nbsp;
+            <a href="#" [routerLink]="['/companyDetails', acquiredBy.acquiringCompany.permalink]" target="_blank"> {{ acquiredBy.acquiringCompany.name}}</a>
+        </div>
+    </div>   
+    <div class="summaryContent">
+        
+        <p>Acquired Year:
+            <span class="acqValues">{{acquiredBy.acquiredYear}}</span></p><br>
+        <p>Amount:
+            <span class="acqValues">{{acquiredBy.priceAmount}}</span></p><br>
+        <p>Acquired Year:
+            <span class="acqValues">{{acquiredBy.priceCurrencyCode}}</span></p><br>
+    </div>
+</div>
+
+<div class="productsNotFound" *ngIf="!acquisitions.length && !acquiredBy">
+    <h3>No data Found!!</h3>
+  </div>
+
