@@ -119,7 +119,7 @@
                     <td>
                         <h4>HomePage URL:</h4>
                         <div *ngIf="companyDetail.homepageUrl; else nullTemplate">
-                            <p>{{companyDetail.homepageUrl}}</p>
+                            <a href="{{companyDetail.homepageUrl}}" target="_blank">{{companyDetail.homepageUrl}}</a>
                         </div>                       
                     </td>
                 </tr>
@@ -145,5 +145,9 @@
                 -
             </ng-template>
         </div>
+</div>
+
+<div class="summarySectionContainer" *ngIf="showContent && !companyDetail">
+    <h2 style="color:red;">Sorry!! Company is not found in database</h2>
 </div>
 

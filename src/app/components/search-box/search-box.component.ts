@@ -14,6 +14,8 @@ export class SearchBoxComponent implements OnInit {
   @Output() onSearch = new EventEmitter<FilterArgs>();
   @Output() onClearSearch = new EventEmitter<String>();
   @Input() searchValue!: String;
+
+  @Input() initialLoad !: boolean;
   args!: FilterArgs;
   constructor(private apiService: ApiService) { }
 

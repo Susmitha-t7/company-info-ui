@@ -20,6 +20,8 @@ export class FilterSectionComponent implements OnInit {
 
   categories !: String[];
 
+  yearRange = ["1800-1850", "1851-1900", "1901-1950", "1951-2000", "2001-2022"];
+
   items = [
     "1-100", "100-500", "500-1000", "1000-5000", "5000-10000", "More than 10k"
 ]; 
@@ -29,6 +31,8 @@ export class FilterSectionComponent implements OnInit {
   tags !: String[];
 
   noOfEmployeesSelected !: String;
+
+  yearRangeSelected !: String;
 
   yearSelected !: number;
 
@@ -82,4 +86,15 @@ export class FilterSectionComponent implements OnInit {
     this.fundSelected = '';
     this.onClear.emit("clear");
   }
+
+  changeRange() { 
+    var newarr = this.yearRangeSelected.split("-");
+    var fromRange: number = +newarr[0];
+    var toRange: number = +newarr[1];
+		this.years = []; 
+    this.years.push();
+    for(let i = fromRange; i <=toRange; ++i) { 
+      this.years.push(i);
+    }
+}
 }

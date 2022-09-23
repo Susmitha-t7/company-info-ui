@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-news-api',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsApiComponent implements OnInit {
 
+  @Input()
+  news !: any;
+
+  public showContent: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
 }

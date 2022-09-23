@@ -11,6 +11,8 @@ export class FundingSectionComponent implements OnInit {
   @Input()
   fundingRounds !: any;
 
+  public showContent: boolean = false;
+
   @ViewChild('dialogRef')
   dialogRef !: TemplateRef<any>
 
@@ -22,6 +24,7 @@ export class FundingSectionComponent implements OnInit {
       _fundingRounds.isExpanded = false;
     });
     console.log(this.fundingRounds);
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
   openFundingDetails(investments : any){

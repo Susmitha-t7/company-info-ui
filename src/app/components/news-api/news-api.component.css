@@ -1,5 +1,21 @@
 .newsContainer{
     position: fixed;
     overflow: hidden;
-    margin-top: 200px;
+    margin-top: 100px;
 }
+
+.secContainer{   
+    border: 0.5px black solid;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    height : 21vh;
+    color: white;
+    background-color: rgb(74, 72, 72);
+}
+
+a{
+    color: white;
+}
+
+
+

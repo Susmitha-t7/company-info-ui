@@ -1,4 +1,8 @@
-<div class="newsContainer">
-    <p>news-api works!</p>
+<div class="newsContainer" *ngIf="news">   
+    <div class="secContainer" *ngFor="let n of news.articles" [style.background-image]="'url(' + (n.urlToImage ? n.urlToImage : '') + ')'">
+        <a href="{{n.url}}" target="_blank">{{n.title}}</a> <br><br>
+        <p>{{n.publishedAt}}</p>            
+    </div>
 </div>
+
 

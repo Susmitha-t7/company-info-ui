@@ -12,11 +12,13 @@ export class AcquisitionsSectionComponent implements OnInit {
 
   @Input()
   acquiredBy !: any;
+  public showContent: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.acquiredBy);
     console.log(this.acquisitions);
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
 }

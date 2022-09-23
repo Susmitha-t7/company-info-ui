@@ -22,7 +22,17 @@ export class ApiService {
 
   private competitorURL = "http://localhost:8080/api/competitors/";
 
+  private newsURL = "http://localhost:8080/api/news/";
+
   constructor(private http: HttpClient) { }
+
+  getNews(): Observable<any>{
+    return this.http.get<any>(`${this.newsURL}`);
+  }
+
+  getNewsByCompany(name : string | null): Observable<any>{
+    return this.http.get<any>(`${this.newsURL}`+name);
+  }
 
   getCompanies(): Observable<Company[]>{
     return this.http.get<Company[]>(`${this.baseUrl}`);

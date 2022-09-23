@@ -28,9 +28,42 @@
 }
 
 .productsNotFound{
-    padding: 30px;
+    padding-left: 30px;
     color: red;
     font-weight: bolder;
 }
+
+.secContainer{   
+    border: 0.2px black solid;
+    color: black;
+    height: 150px;
+    background-color: rgb(241, 239, 223);
+    margin: 10px;
+    display: table
+}
+
+a{
+    color: black;
+}
+
+.contentContainer{
+    padding: 10px;
+
+}
+
+h4{
+    font-weight: lighter;
+    font-style: oblique;
+}
+
+
+p{
+    font-size: medium;
+}
+
+
+
+
+
 
 

@@ -7,10 +7,10 @@
             <app-search-box (onSearch)="onSearch($event)" (onClearSearch)="onClearSearch($event)" [searchValue]="searchValue"></app-search-box>
             <div class="row">
               <div class="col-md-9">
-                  <app-search-result [companies] = "companies"></app-search-result>
+                  <app-search-result [companies] = "companies" [initialLoad]="initialLoad"></app-search-result>
               </div>
               <div class="col-md-3">
-                  <app-news-api></app-news-api>
+                  <app-news-api [news] = "news"></app-news-api>
               </div>
             </div>
         </div>

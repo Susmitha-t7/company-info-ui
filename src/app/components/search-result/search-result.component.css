@@ -9,4 +9,51 @@ h5{
 
 .searchResultContainer{
     margin-top: 100px;
+    
 }
+
+.searchResultInitial{
+    margin-top: 150px;
+    position: fixed;
+    overflow: hidden;
+    width: 50%;
+}
+
+.boxComp{
+    display: flex;
+    flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        column-count:2;
+        height: 100%;
+        width: 100%;
+}
+
+.boxComp:hover{
+    background-color: lightgray;
+}
+
+.table {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;  
+    justify-content: center; 
+  }
+
+  .containerNg{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+  }
+
+  .cardSec{
+    padding: 10px;
+  }
+
+  img{
+    margin: 15px;
+  }
+
+
+
+

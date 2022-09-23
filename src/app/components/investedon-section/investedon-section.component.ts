@@ -9,10 +9,12 @@ export class InvestedonSectionComponent implements OnInit {
 
   @Input()
   investments !: any;
+  public showContent: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.investments);
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
 }

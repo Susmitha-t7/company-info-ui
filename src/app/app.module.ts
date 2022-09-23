@@ -28,7 +28,9 @@ import { ProductsSectionComponent } from './components/products-section/products
 import { NewsSectionComponent } from './components/news-section/news-section.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { FlexModule } from '@angular/flex-layout';
+import { GridModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     InfiniteScrollModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [MessageCompanyService, ApiService],
   bootstrap: [AppComponent]

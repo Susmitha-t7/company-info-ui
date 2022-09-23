@@ -9,10 +9,14 @@ export class ProductsSectionComponent implements OnInit {
 
   @Input()
   products !: any;
+
+  public showContent: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
     console.log("products::::"+this.products);
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
 }

@@ -19,10 +19,21 @@
       </select>
     </div>
     <hr>
+
+    <div class="filterCont">
+      <h4>Founded Year Range:</h4>
+      <select [(ngModel)]="yearRangeSelected" (change)="changeRange()">
+        <option *ngFor="let item of yearRange" [value]="item">
+          {{item}}
+        </option>
+      </select>
+    </div>
+    <br>
     
     <div class="filterCont">
       <h4>Founded Year:</h4>
       <select [(ngModel)]="yearSelected">
+        <option [value]="null">Please select</option>
         <option *ngFor="let year of years" [value]="year">
           {{year}}
         </option>

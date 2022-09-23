@@ -12,10 +12,13 @@ export class SearchResultComponent implements OnInit {
   @Input()
   companies !: Company[];
 
+  @Input()
+  initialLoad !: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
-      
+    console.log(this.initialLoad);
   }
 
 }

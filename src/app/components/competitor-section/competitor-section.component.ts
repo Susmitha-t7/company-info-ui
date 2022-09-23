@@ -14,6 +14,7 @@ export class CompetitorSectionComponent implements OnInit {
   @Input()
   competitors !: any;
   competitorDetail !: Company[];
+  public showContent: boolean = false;
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class CompetitorSectionComponent implements OnInit {
       console.log(data);
       this.competitorDetail = data;
     });
+    setTimeout(()=>this.showContent=true, 1000);
     
   }
 

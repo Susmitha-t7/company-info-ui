@@ -1,12 +1,30 @@
 <div class="summarySectionContainer">
     <div class="headingSec">
-        <div class="summaryCont">Products:</div>
+        <div class="summaryCont">News:</div>
     </div>
     
     <div class="summaryContent" *ngIf="companyName">
-        
+      <div class="newsContainer" *ngIf="news">   
+        <div class="secContainer" *ngFor="let n of news.articles">
+            <table>
+              <tr>
+                <td style="width: 165px;">
+                  <img src="{{n.urlToImage}}" alt="News" width="165px" height="165px">
+                </td>
+                <td class="contentContainer">
+                  <a href="{{n.url}}" target="_blank">{{n.title}}</a> <br><br>
+                  <h4>{{n.publishedAt}}</h4> 
+                  <p>{{n.description}}</p>
+                </td>
+              </tr>
+            </table>
+                        
+        </div>
     </div>
-    <div class="productsNotFound" *ngIf="!companyName">
-      <h3>No Products Found!!</h3>
+    </div>
+    <div class="productsNotFound" *ngIf="showContent">
+      <div *ngIf="!news.articles.length">
+        <h3>No News Found!!</h3>
+      </div>
     </div>
 </div>

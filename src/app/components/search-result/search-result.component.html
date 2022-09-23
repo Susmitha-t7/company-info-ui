@@ -1,4 +1,4 @@
-<div class="searchResultContainer">
+<div class="searchResultContainer" *ngIf="!initialLoad">
 
 <mat-card *ngFor="let company of companies">
     <mat-card-title>
@@ -18,4 +18,23 @@
       </h5>
     </mat-card-content>
   </mat-card>
+</div>
+
+<div class="searchResultInitial" *ngIf="initialLoad">
+  <!--
+  <div *ngFor="let company of companies" class="boxComp" [routerLink]="['/companyDetails', company.permalink]">
+      <img src="../../../assets/images/{{company.permalink}}.png" height="40px" width="40px" >
+        <div>{{company.name}}</div> 
+  </div>
+-->
+  <div class="table">
+    <div *ngFor="let company of companies" class="cardSec">
+      <div class="shadow containerNg">
+          <div class="boxComp" [routerLink]="['/companyDetails', company.permalink]">
+            <img src="../../../assets/images/{{company.permalink}}.png" height="40px" width="40px" >
+            <div>{{company.name}}</div> 
+          </div>
+      </div>
+    </div>
+  </div>
 </div>

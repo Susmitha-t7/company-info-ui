@@ -18,11 +18,15 @@ export class RelationshipsSectionComponent implements OnInit {
   filteredItems !: relationship[];
 
   searchValue !: string;
+
+  public showContent: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.relationships);
     this.assignCopy();
+    setTimeout(()=>this.showContent=true, 1000);
   }
 
   assignCopy(){
@@ -34,8 +38,8 @@ export class RelationshipsSectionComponent implements OnInit {
   if(this.searchValue != null && this.searchValue!=""){
     this.filteredItems = this.filteredItems
                               .filter(
-                                        obj => obj.person.firstName.includes(this.searchValue) 
-                                                || obj.person.lastName.includes(this.searchValue))
+                                        obj => obj.person.firstName.toLowerCase().includes(this.searchValue.toLowerCase()) 
+                                                || obj.person.lastName.toLowerCase().includes(this.searchValue.toLowerCase()))
   }
 
  }

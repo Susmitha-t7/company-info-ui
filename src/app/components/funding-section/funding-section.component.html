@@ -12,7 +12,7 @@
             </tr>
             <tr *ngFor= "let fund of fundingRounds">
                 <td>
-                    <button mat-button (click)="openFundingDetails(fund.investments)">{{ fund.roundCode}} (id : {{fund.id}})</button>
+                    <button (click)="openFundingDetails(fund.investments)">{{ fund.roundCode}} (id : {{fund.id}})</button>
                 </td>
                 <td>{{ fund.raisedAmount }}</td>
                 <td>{{ fund.raisedCurrencyCode }}</td>
@@ -21,7 +21,7 @@
         </table>   
     </div>
     
-    <div class="productsNotFound" *ngIf="!fundingRounds.length">
+    <div class="productsNotFound" *ngIf="showContent && !fundingRounds.length">
       <h3>No Data Found!!</h3>
     </div>
 
